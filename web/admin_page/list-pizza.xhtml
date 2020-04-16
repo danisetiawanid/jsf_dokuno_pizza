@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"/>
+    <title>User Table</title>
+    <link href="../resources/assets_materialize/css/style.css" rel="stylesheet"/>
+    <!-- This page CSS -->
+    <link href="../resources/assets_materialize/libs/footable/css/footable.core.css" rel="stylesheet"/>
+    <link href="../resources/assets_materialize/css/pages/footable-page.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+          <div class="main-wrapper" id="main-wrapper">
+    <header class="topbar">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="javascript:void(0)" class="brand-logo">
+            <span class="icon">
+              <img class="dark-logo" src="../resources/img/favicon.png" />
+            </span>
+            <span class="text">
+              <img class="dark-logo" src="../resources/img/logo-text2.png" />
+            </span>
+          </a>
+          <ul class="left">
+            <li class="hide-on-med-and-down">
+              <a href="javascript: void(0);" class="nav-toggle">
+                <span class="bars bar1"></span>
+                <span class="bars bar2"></span>
+                <span class="bars bar3"></span>
+              </a>
+            </li>
+            <li class="hide-on-large-only">
+              <a href="javascript: void(0);" class="sidebar-toggle">
+                <span class="bars bar1"></span>
+                <span class="bars bar2"></span>
+                <span class="bars bar3"></span>
+              </a>
+            </li>
+
+          </ul>
+          <ul class="right">
+
+            <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img
+                  src="../resources/img/testimonials/student.png" alt="user" class="circle profile-pic" /></a>
+              <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
+                <li>
+                  <div class="dw-user-box">
+                    <div class="u-img"><img src="../resources/img/testimonials/student.png" alt="user" /></div>
+                    <div class="u-text">
+                      <h4>#{tblAdmin.username}</h4>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="login.xhtml"><i class="material-icons">power_settings_new</i> Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <aside class="left-sidebar">
+      <ul id="slide-out" class="sidenav">
+        <li>
+          <ul class="collapsible">
+            <li class="small-cap"><span class="hide-menu">PERSONAL</span></li>
+            <li>
+              <a href="admin_index.xhtml"><i class="material-icons">dashboard</i><span class="hide-menu">
+                  Dashboard</span></a>
+            </li>
+            <li class="small-cap"><span class="hide-menu">Data User</span></li>
+            <li>
+              <a href="user-table.xhtml"><i class="material-icons">supervised_user_circle</i><span class="hide-menu">User
+                  Table</span></a>
+            </li>
+            <li class="active">
+              <a href="list-pizza.xhtml" class="collapsible-header"><i class="material-icons">local_pizza</i><span
+                  class="hide-menu"> List Pizza
+                </span></a>
+            </li>
+            <li>
+              <a href="transaction.xhtml"><i class="material-icons">payment</i><span class="hide-menu"> Transaction
+                </span></a>
+            </li>
+            <li class="small-cap"><span class="hide-menu">Single Link</span></li>
+            <a href="login.xhtml" class="collapsible-header"><i class="material-icons">directions</i><span
+                class="hide-menu"> Log Out </span></a>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <div class="page-wrapper">
+      <div class="page-titles">
+        <div class="d-flex align-items-center">
+          <h5 class="font-medium m-b-0">List Pizza</h5>
+          <div class="custom-breadcrumb ml-auto">
+            <a href="#!" class="breadcrumb">Data User</a>
+            <a href="#!" class="breadcrumb">List Pizza</a>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col s12">
+            <div class="card">
+              <div class="card-content">
+                <h4 class="card-title">List Pizaa</h4>
+                <h6 class="card-subtitle">This is List Pizza for Dokuno Pizza</h6>
+                <div class="m-t-40">
+                  <div class="d-flex">
+                    <div class="ml-auto">
+                      <div class="form-group">
+                        <a href="#add-contact" class="waves-effect waves-light btn modal-trigger ml-auto">Add Pizza</a>
+                        <div id="add-contact" class="modal">
+                          <h:form>
+                            <div class="modal-content">
+
+
+                            <!-- INI ADALAH FORM -->
+                            
+                              <div class="row">
+                                <div class="input-field col s12">
+                                    <h:inputText id="pizza" value="#{tblProduct.pizzaName}"/>
+                                  <label for="pizza">Pizza Name</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                    <h:inputText id="stock" value="#{tblProduct.stock}"/>
+                                  <label for="stock">Stock</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                    <h:inputText id="price" value="#{tblProduct.price}"/>
+                                  <label for="price">Price</label>
+                                </div>
+                              </div>
+                            
+
+
+                          </div>
+                          <div class="modal-footer">
+                              <h:commandButton value="Save" action="#{tblProduct.save()}" class="btn modal-action modal-close waves-effect waves-light cyan"></h:commandButton>
+                            <a href="#!"
+                              class="btn modal-action modal-close waves-effect waves-light grey darken-4">Cancel</a>
+                          </div>
+                            </h:form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+
+
+                    <!-- Ini Tabel -->
+                    <table id="demo-foo-addrow" class="table m-t-10 highlight contact-list" data-page-size="10">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Pizza Name</th>
+                          <th>Stock</th>
+                          <th>Price</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                        
+                      <tbody>
+                          <h:form>
+                              <ui:repeat value="#{tblProduct.rec}" var="item">
+                        <tr>
+                            <td>#{item.idPizza}</td>
+                            <td>#{item.pizzaName}</td>
+                            <td><span class="label label-primary">#{item.stock}</span></td>
+                            <td><span class="label label-success">#{item.price}</span></td>
+                             <td><h:commandButton class="label label-info" value="Edit" action="#{tblProduct.getbyid(item.idPizza)}"/>
+                             <h:commandButton class="label label-danger" value="Delete" action="#{tblProduct.delete1(item.idPizza)}"/></td>
+                          
+                        </tr>
+                                 
+                                  </ui:repeat>
+                              </h:form>
+                      </tbody>
+                            
+                      <tfoot>
+                        <tr>
+                          <td colspan="9">
+                            <div class="d-flex">
+                              <div class="ml-auto">
+                                <div class="form-group">
+                                  <div class="text-right">
+                                    <ul class="pagination">
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="chat-windows"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="../resources/assets_materialize/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../resources/assets_materialize/js/materialize.min.js"></script>
+  <script src="../resources/assets_materialize/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js">
+  </script>
+  <script src="../resources/assets_materialize/js/app.js"></script>
+  <script src="../resources/assets_materialize/js/app.init.light-sidebar.js"></script>
+  <script src="../resources/assets_materialize/js/app-style-switcher.js"></script>
+
+  <script src="../resources/assets_materialize/js/custom.min.js"></script>
+  <script src="../resources/assets_materialize/libs/footable/dist/footable.all.min.js"></script>
+  <script src="../resources/assets_materialize/js/pages/footable/footable-init.js"></script>
+    </h:body>
+</html>
+

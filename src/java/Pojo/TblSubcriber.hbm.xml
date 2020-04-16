@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 8, 2019 12:39:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojo.TblSubcriber" table="tbl_subcriber" catalog="dokunopizza" optimistic-lock="version">
+        <id name="idSubcriber" type="java.lang.Integer">
+            <column name="id_subcriber" />
+            <generator class="identity" />
+        </id>
+        <property name="email" type="string">
+            <column name="email" length="200" not-null="true" />
+        </property>
+        <property name="phoneNumber" type="string">
+            <column name="phone_number" length="200" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

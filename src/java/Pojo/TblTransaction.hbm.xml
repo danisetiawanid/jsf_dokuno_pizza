@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 8, 2019 12:39:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojo.TblTransaction" table="tbl_transaction" catalog="dokunopizza" optimistic-lock="version">
+        <id name="idTransaction" type="java.lang.Integer">
+            <column name="id_transaction" />
+            <generator class="identity" />
+        </id>
+        <property name="idUser" type="int">
+            <column name="id_user" not-null="true" />
+        </property>
+        <property name="idPizzaProduct" type="int">
+            <column name="id_pizza_product" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200" not-null="true" />
+        </property>
+        <property name="pizzaName" type="string">
+            <column name="pizza_name" length="200" not-null="true" />
+        </property>
+        <property name="price" type="int">
+            <column name="price" not-null="true" />
+        </property>
+        <property name="qty" type="int">
+            <column name="qty" not-null="true" />
+        </property>
+        <property name="totalPrice" type="int">
+            <column name="total_price" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" not-null="true" />
+        </property>
+        <property name="dateOfPurchase" type="string">
+            <column name="date_of_purchase" length="200" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

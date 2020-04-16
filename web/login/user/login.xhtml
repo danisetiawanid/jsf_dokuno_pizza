@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../resources/img/favicon.png"/>
+        <title>Facelet Title</title>
+        <link href="../../resources/assets_materialize/css/style.css" rel="stylesheet"/>
+        <!-- This page CSS -->
+        <link href="../../resources/assets_materialize/css/pages/authentication.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+<div class="main-wrapper">
+    <div class="preloader">
+      <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Material Admin</p>
+      </div>
+    </div>
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center"
+      style="background:url('../../resources/img/auth-bg.jpg') no-repeat center center;">
+      <div class="auth-box">
+        <div id="loginform">
+          <div class="logo">
+            <span class="db"><img src="../../resources/img/favicon.png" alt="logo" /></span>
+            <h5 class="font-medium m-b-20">Login User</h5>
+          </div>
+          <!-- Form -->
+          <div class="row">
+            <h:form class="col s12" id="loginform" onsubmit="return validate()">
+              <div class="row">
+                <div class="input-field col s12">
+                    <h:inputText id="uemail" class="validate" value="#{tblUser.email}" />
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <!-- pwd -->
+              <div class="row">
+                <div class="input-field col s12">
+                    <h:inputSecret id="pwd" class="validate" value="#{tblUser.password}" />
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <!-- pwd -->
+              <div class="row m-t-40">
+                <div class="col s12">
+                    <h:commandButton value="LOGIN" class="btn-large w100 red accent-4" action="#{tblUser.validasiUser()}"></h:commandButton>
+                </div>
+              </div>
+            </h:form>
+          </div>
+          <div class="center-align m-t-20 db">
+            Don't have an account? <a href="register.xhtml">Sign Up!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../resources/assets_materialize/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../../resources/assets_materialize/js/materialize.min.js"></script>
+  <script>
+    $('.tooltipped').tooltip();
+    $('#to-recover').on("click", function () {
+      $("#loginform").slideUp();
+      $("#recoverform").fadeIn();
+    });
+    $(function () {
+      $(".preloader").fadeOut();
+    });
+  </script>
+  <script language="javascript">
+    function validate() {
+        var email = document.getElementById("loginform:uemail");
+        if ( email.value == "")
+        {
+            alert("Please enter email!");
+            return false;
+        }
+        var password = document.getElementById("loginform:pwd");
+        if ( password.value == "")
+        {
+            alert("Please enter password!");
+            return false;
+        }
+        return true;
+    }
+</script>
+    </h:body>
+</html>
+

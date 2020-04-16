@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link rel="icon" type="image/png" sizes="16x16" href="../../resources/img/favicon.png"/>
+        <title>Dokuno Pizza</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../../resources/assets_bootstrap/css/bootstrap.css"/>
+
+        <!-- My Css -->
+        <link rel="stylesheet" href="../../resources/assets_bootstrap/css/style.css"/>
+        
+        <!-- font awesome css-->
+        <link rel="stylesheet" href="../../resources/assets_bootstrap/css/all.css"/>
+        
+
+    </h:head>
+    <h:body>
+         <!-- Awal Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Dokuno Pizza</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a class="btn btn-outline-light my-2 my-sm-0" href="../../index.xhtml">Logout</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Akhir Navbar -->
+
+  <!-- Awal Carousel -->
+
+  <!-- Akhir Carousel -->
+
+  <section class="pizza mt-5 bg-light" id="pizza">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center my-4 text-danger">
+            <h1>Select Your Pizza</h1>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md mb-3">
+          <img src="../../resources/img/2.png" class="rounded-circle"/>
+          <p class="font-weight-bold mt-3 mb-1">Veggie Lover's</p>
+          <p>Rp. 20.000</p>
+          <h:form>
+                <h:inputHidden class="form-control" value="#{tblTransaction.idUser}"/><br></br>
+                <h:outputText value="ID Pizza"/><br></br>
+                <h:inputText class="form-control" value="#{tblTransaction.idPizzaProduct}"/><br></br>
+                <h:outputText value="Name User"/><br></br>
+                <h:inputText class="form-control" value="#{tblTransaction.name}"/><br></br>
+                <h:outputText value="Pizza Name"/><br></br>
+                <h:inputText class="form-control" value="#{tblTransaction.pizzaName}"/><br></br>
+                <h:outputText value="Price Pizza"/><br></br>
+                <h:inputText value="#{tblTransaction.price}" class="form-control"/><br></br>
+                <h:outputText value="Quantity"/><br></br>
+                <h:inputText  value="#{tblTransaction.qty}" class="form-control"/><br></br>
+                <h:outputText value="Total Price"/><br></br>
+                <h:inputText value="#{tblTransaction.totalPrice}" class="form-control"/><br></br>
+                <h:outputText value="Address"/><br></br>
+                <h:inputTextarea class="form-control" value="#{tblTransaction.address}"/><br></br>
+                <h:outputText value="Date of Purchase"/><br></br>
+                <h:inputText class="form-control" value="#{tblTransaction.dateOfPurchase}"/><br></br>
+                <h:commandButton class="btn btn-primary" value="BUY PIZZA!" action="#{tblTransaction.save()}"/>
+        </h:form>
+          
+        </div>
+        <div class="col-md mb-3">
+          <img src="../../resources/img/1.jpg" class="rounded-circle"/>
+          <p class="font-weight-bold mt-3 mb-1">Cheese Mania</p>
+          <p>Rp. 10.000</p>
+          <h:form>
+               <h:inputHidden class="form-control"/><br></br>
+                <h:outputText value="ID Pizza"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Name User"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Pizza Name"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Price Pizza"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Quantity"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Total Price"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Address"/><br></br>
+                <h:inputTextarea class="form-control" value=""/><br></br>
+                <h:outputText value="Date of Purchase"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:commandButton class="btn btn-primary" value="BUY PIZZA!"/>
+        </h:form>
+        </div>
+        <div class="col-md mb-3">
+          <img src="../../resources/img/3.jpg" class="rounded-circle"/>
+          <p class="font-weight-bold mt-3 mb-1">Extravaganza</p>
+          <p>Rp. 30.000</p>
+          <h:form>
+               <h:inputHidden class="form-control"/><br></br>
+                <h:outputText value="ID Pizza"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Name User"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Pizza Name"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Price Pizza"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Quantity"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Total Price"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Address"/><br></br>
+                <h:inputTextarea class="form-control" value=""/><br></br>
+                <h:outputText value="Date of Purchase"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+               <h:commandButton class="btn btn-primary" value="BUY PIZZA!"/>
+        </h:form>
+        </div>
+        <div class="col-md mb-3">
+          <img src="../../resources/img/4.jpg" class="rounded-circle"/>
+          <p class="font-weight-bold mt-3 mb-1">Meatzza</p>
+          <p>Rp. 60.000</p>
+          <h:form>
+               <h:inputHidden class="form-control"/><br></br>
+                <h:outputText value="ID Pizza"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Name User"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Pizza Name"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Price Pizza"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Quantity"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Total Price"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:outputText value="Address"/><br></br>
+                <h:inputTextarea class="form-control" value=""/><br></br>
+                <h:outputText value="Date of Purchase"/><br></br>
+                <h:inputText class="form-control" value=""/><br></br>
+                <h:commandButton class="btn btn-primary" value="BUY PIZZA!"/>
+        </h:form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="../../resources/assets_bootstrap/js/jquery-3.4.1.min.js">
+  </script>
+  <script src="../../resources/assets_bootstrap/js/smooth-scroll.js"></script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
+  <script src="../../resources/assets_bootstrap/js/popper.min.js">
+  </script>
+  <script src="../../resources/assets_bootstrap/js/bootstrap.js">
+  </script>
+  <script src="../../resources/assets_bootstrap/js/all.js">
+  </script>
+   <script src="../../resources/assets_bootstrap/js/datesum.js">
+  </script>
+    </h:body>
+</html>
+

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/img/favicon.png"/>
+    <title>Sign In Admin</title>
+    <link href="../../resources/assets_materialize/css/style.css" rel="stylesheet"/>
+    <!-- This page CSS -->
+    <link href="../../resources/assets_materialize/css/pages/authentication.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <div class="main-wrapper">
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">Material Admin</p>
+            </div>
+        </div>
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center"
+            style="background:url(../../resources/img/auth-bg2.jpg) no-repeat left center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 l8 m6 demo-text">
+                        <span class="db"><img src="../../resources/img/favicon.png" alt="logo" /></span>
+                        <span class="db"><img src="../../resources/img/logo-text2.png" alt="logo" /></span>
+                        <h1 class="font-light m-t-40">Welcome to the <span class="font-medium black-text">Dokuno
+                                Admin</span></h1>
+                        <p>This is just a demo text which you can change as per your requeirment, so change once you get
+                            chance. this is default text.</p>
+                    </div>
+                </div>
+                <div class="auth-box auth-sidebar">
+                    <div id="loginform">
+                        <div class="p-l-10">
+                            <h5 class="font-medium m-b-0 m-t-40">Sign In to Admin</h5>
+                            <small>Just login to your account</small>
+                        </div>
+                        <!-- Form -->
+                        <div class="row">
+                            <h:form class="col s12">
+                                <!-- email -->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <h:inputText class="validate" value="#{tblAdmin.username}" />
+                                        <label for="email">Username</label>
+                                    </div>
+                                </div>
+                                <!-- pwd -->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <h:inputSecret class="validate" value="#{tblAdmin.password}" />
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>  
+                                <!-- pwd -->
+                                <div class="row m-t-40">
+                                    <div class="col s12">
+                                        <h:commandButton value="LOGIN" class="btn-large w100 red accent-4" action="#{tblAdmin.validasiUser()}"></h:commandButton>
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../resources/assets_materialize/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../resources/assets_materialize/js/materialize.min.js"></script>
+    
+    <script>
+        $('.tooltipped').tooltip();
+        // ============================================================== 
+        // Login and Recover Password 
+        // ============================================================== 
+        $('#to-recover').on("click", function () {
+            $("#loginform").slideUp();
+            $("#recoverform").fadeIn();
+        });
+        $(function () {
+            $(".preloader").fadeOut();
+        });
+    </script>
+    </h:body>
+</html>
+
